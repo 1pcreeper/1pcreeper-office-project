@@ -1,0 +1,24 @@
+server:
+  port: ${ADMIN_BACKEND_SERVER_PORT}
+  servlet:
+    context-path: ${ADMIN_BACKEND_SERVLET_CONTEXT_PATH}
+  tomcat:
+    max-http-form-post-size: 10485760 # 10MB = 10 × 1024 × 1024 = 10,485,760 bytes
+spring:
+  application:
+    name: office-system
+  jpa:
+    hibernate.ddl-auto: none
+    properties.hibernate.jdbc.time_zone: ${DB_TIME_ZONE}
+  datasource:
+    url: jdbc:postgresql://${DB_SERVER_HOST}:${DB_SERVER_PORT}/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    liquibase:
+      change-log: classpath:db/changelog/db.changelog-master.yaml # Points to master changelog
+cors:
+  allowed-origins: ${ADMIN_BACKEND_ALLOWED_ORIGINS}
+jwt:
+  secret: ${ADMIN_BACKEND_JWT_SECRET}
+  expiration.millis: ${ADMIN_BACKEND_JWT_EXPIRATION_MILLIS}
