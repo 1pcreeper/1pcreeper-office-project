@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="OfficeProjectApplication" type="Application" factoryName="Application">
+  <configuration default="false" name="BioJournalOfficeProjectApplication" type="Application" factoryName="Application">
     <option name="envFilePaths">
-      <option value="$PROJECT_DIR$/.env.local" />
+      <option value="$PROJECT_DIR$/backend/.env.local" />
     </option>
     <option name="MAIN_CLASS_NAME" value="project.office.OfficeProjectApplication" />
-    <module name="paytalog-booking-system" />
+    <module name="Bio Journal System" />
     <extension name="net.ashald.envfile">
       <option name="IS_ENABLED" value="true" />
       <option name="IS_SUBST" value="false" />

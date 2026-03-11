@@ -6,7 +6,7 @@ server:
     max-http-form-post-size: 10485760 # 10MB = 10 × 1024 × 1024 = 10,485,760 bytes
 spring:
   application:
-    name: office-system
+    name: bio-journal-office-system
   jpa:
     hibernate.ddl-auto: none
     properties.hibernate.jdbc.time_zone: ${DB_TIME_ZONE}
