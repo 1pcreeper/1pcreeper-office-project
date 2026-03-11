@@ -39,27 +39,6 @@ CREATE TABLE abstract_auditable_entity (
   FOREIGN KEY (updated_by) REFERENCES "users"(id) ON DELETE CASCADE
 ) INHERITS (abstract_persistable_entity);
 
-CREATE TABLE journals (
-  id SERIAL PRIMARY KEY,
-  doi VARCHAR(100) UNIQUE,
-  pmid VARCHAR(20),   
-  download_dir_path UUID UNIQUE DEFAULT gen_random_uuid(),
-  title TEXT NOT NULL,
-  authors TEXT,
-  year INTEGER
-) INHERITS (abstract_auditable_entity);
-
-CREATE TABLE journal_docs (
-  id SERIAL PRIMARY KEY,
-  journal_id INTEGER NOT NULL,
-  platform journal_platform NOT NULL,
-  published_at TIMESTAMP,
-  pdf_url TEXT,
-  download_pdf_path TEXT UUID UNIQUE DEFAULT gen_random_uuid(),
-  abstract TEXT,
-  UNIQUE(journal_id, platform)
-) INHERITS (abstract_auditable_entity);
-
 
 INSERT INTO users(id,name,password,created_at) VALUES(0,'admin','$2a$10$L48wRTygNoYcqJs6nYPL5uQuvHFD8fDv9AG1a3yHvsTJAnTGK2DsK',now());
 -- admin password
